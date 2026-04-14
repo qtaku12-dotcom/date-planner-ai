@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartDate Planner</title>
+</head>
+<body style="padding: 20px; font-family: sans-serif;
+             background-color: #fdf2f8; display: flex;
+              flex-direction: column; align-items: center;">
+
+    <h1 style="color: #db2777;">デートプランナー</h1>
+    <p style="color: #666;">AIがあなたに最高のデートを提案します。</p>
+
+    <div style="background: white; padding: 30px; border-radius: 50px;
+     box-shadow: 0 10px 25px rgba(255,0,0,0.5);
+     width: 100%; max-width: 350px;
+     border: 1px solid #fbcfe8;">
+
+        <label style="font-weight: bold; color: #db2777;">  👭 年齢は？</label><br>
+        <input type="number" id="age" placeholder="30" 
+               style="padding: 12px;
+               width: 90%; margin: 10px 0;
+               border: 2px solid #fce7f3;
+                     border-radius: 10px; font-size: 16px;
+                                   background: white;">
+             <br><br>
+
+        <label style="font-weight: bold; color: #db2777;">💰 デートの予算は？</label>
+        <br>
+        <input type="number" id="budget" placeholder="10000" 
+               style="padding: 12px; 
+                    width: 90%; margin: 10px 0;
+                     border: 2px solid #fce7f3;
+                     border-radius: 10px; font-size: 16px;
+                     background: white;">
+        
+        <br><br>
+        
+        <label style="font-weight: bold; color: #db2777;">🍽 食べたいものは？</label><br>
+        <select id="food"
+             style="padding: 12px; 
+                    width: 100%; margin: 10px 0;
+                     border: 2px solid #fce7f3;
+                     border-radius: 10px; font-size: 16px;
+                     background: white;">
+            <option>イタリアン</option>
+            <option>和食（お寿司など）</option>
+            <option>フレンチ</option>
+            <option>カジュアルな居酒屋</option>
+        </select>
+        
+        <br><br>
+        
+        <button type="button" style="background: #db2777; color: white; border: none; padding: 15px; border-radius: 15px; width: 100%; font-weight: bold; font-size: 18px; cursor: pointer; transition: 0.3s;">
+            AIにプランを提案してもらう！
+        </button>
+
+    </div>
+
+</body>
+</html>
