@@ -73,7 +73,29 @@
             AIにプランを提案してもらう！
         </button>
         </div>
-<p id="msg" style="text-align: center; font-weight: bold; color: #db2777;"></p>
+<script>
+function showResult() {
+    // 1. 画面に入力された値を受け取る
+    const gender = document.getElementById('gender').value;
+    const budget = document.getElementById('budget').value;
+    const food = document.getElementById('food').value;
+
+    // 2. AI（プログラム）がプランを考える
+    let plan = "";
+
+    if (budget < 3000) {
+        plan = `予算${budget}円なら、公園で${food}をテイクアウトしてピクニックはどうでしょう？`;
+    } else if (budget < 10000) {
+        plan = `予算${budget}円なら、おしゃれな${food}のお店を予約してゆっくり過ごしましょう！`;
+    } else {
+        plan = `贅沢に${budget}円！最高の${food}フルコースを楽しんでください。`;
+    }
+
+    // 3. 結果を表示する（今回はとりあえずポップアップで！）
+    alert("【AIからの提案】\n" + plan);
+}
+</script>
+
 
 
 
