@@ -11,17 +11,9 @@
     <h1 style="color: #db2777;">デートプランナー</h1>
     <p style="color: #666;">AIがあなたに最高のデートを提案します。</p>
 
-<section>
-<div id="app-content">
-
-    <section id="plan-page" class="page" style="display: none;">
-        <div style="background: white; padding: 30px; border-radius: 50px; ">
-            </div>
-    </section>
-
+    <div id="app-content">
+<section id="plan-page" class="page" style="display: none; width: 100%; display: flex; flex-direction: column; align-items: center;">
 </div>
-
-
  <div style="background: white; padding: 30px; border-radius: 50px;
      box-shadow: 0 10px 25px rgba(255,0,0,0.5); width: 100%; max-width: 350px; border: 1px solid #fbcfe8;">
 
@@ -97,8 +89,9 @@
         </button>
         </div>
 </section>
+
 <section id="home-page" class="page">
-    <div style="text-align: center; padding: 30px;">
+    <div style="text-align: center; padding: 20px;">
         <h2 style="color: #db2777;">SmartDate AI</h2>
         <p>現在の恋愛レベル：Lv.5</p>
         <button onclick="showPage('plan')" style="background: #db2777; color: white; padding: 15px; width: 100%; border-radius: 15px; border: none; font-weight: bold;">
@@ -109,7 +102,7 @@
 
 <section id="stats-page" class="page" style="display: none;">
     <h2 style="text-align: center;">成功率分析</h2>
-    <div style="background: white; padding: 30px; border-radius: 20px; margin: 10px; min-height: 20px;">
+    <div style="background: white; padding: 20px; border-radius: 20px; margin: 10px; min-height: 200px;">
         <p>（ここに将来グラフが表示されます）</p>
     </div>
 </section>
@@ -143,12 +136,11 @@ function showResult() {
 }
 </script>
 
-
-
-
-
-
-
+<nav style="position: fixed; bottom: 0; left: 0; width: 100%; display: flex; background: #fff; border-top: 1px solid #ddd; z-index: 100;">
+    <button onclick="showPage('home')" style="flex: 1; padding: 15px; border: none; background: none;">🏠ホーム</button>
+    <button onclick="showPage('plan')" style="flex: 1; padding: 15px; border: none; background: none;">📅計画</button>
+    <button onclick="showPage('stats')" style="flex: 1; padding: 15px; border: none; background: none;">📈分析</button>
+</nav>
 
 </body>
 </html>
