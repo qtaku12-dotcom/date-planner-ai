@@ -38,6 +38,20 @@
                                    background: white;">
         <br><br>
 
+        <label style="font-weight: bold; color: #db2777;"> 🚗 デートの移動手段は？</label><br>
+        <select id="transport"  
+               style="padding: 12px;
+               width: 100%; margin: 10px 0;
+               border: 2px solid #fce7f3;
+               border-radius: 10px; font-size: 16px;
+                 background: white;">
+                 <option value="徒歩・自転車">徒歩・自転車</option>
+                 <option value="車">車</option>
+                 <option value="電車">電車</option>
+        </select>       
+        <br><br>
+        
+
         <label style="font-weight: bold; color: #db2777;">💰 デートの予算は？</label>
         <br>
         <input type="number" id="budget" placeholder="10000" 
@@ -84,8 +98,8 @@ function showResult() {
     const age = document.getElementById('age').value;
     const budget = document.getElementById('budget').value;
     const food = document.getElementById('food').value;
-
-    let message = `${age}歳の${gender}の方へ、予算${budget}円で楽しめる「${food}」のデートプランを考えています...<br><br>`;
+    const transport= document.getElementById('transport').value;
+    let message = `${age}歳の${gender}の方へ、${transport}という移動手段で、${budget}円で楽しめる「${food}」のデートプランを考えています...<br><br>`;
     
     message += "✨ **おすすめプラン** ✨<br>";
     message += "心理学的には、最初にお互いの共通点を見つけると親密度が上がります。";
