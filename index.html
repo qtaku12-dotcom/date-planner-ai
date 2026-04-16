@@ -11,10 +11,19 @@
     <h1 style="color: #db2777;">デートプランナー</h1>
     <p style="color: #666;">AIがあなたに最高のデートを提案します。</p>
 
+<section>
+<div id="app-content">
+
+    <section id="plan-page" class="page" style="display: none;">
+        <div style="background: white; padding: 30px; border-radius: 50px; ">
+            </div>
+    </section>
+
+</div>
+
+
  <div style="background: white; padding: 30px; border-radius: 50px;
-     box-shadow: 0 10px 25px rgba(255,0,0,0.5);
-     width: 100%; max-width: 350px;
-     border: 1px solid #fbcfe8;">
+     box-shadow: 0 10px 25px rgba(255,0,0,0.5); width: 100%; max-width: 350px; border: 1px solid #fbcfe8;">
 
    <label style="font-weight: bold; color: #db2777;"> 👭 あなたの性別は？</label><br>
         <select id="gender"  
@@ -77,9 +86,9 @@
             <option>カジュアルな居酒屋</option>
         </select>
         
-        <br><br>
+        <br><br>    
         
-        
+    
         <button type="button" onclick="showResult()" style="background :#db2777 ;
          color: white; border: none; padding: 15px; border-radius: 15px;
           width: 100%; font-weight: bold;
@@ -87,11 +96,30 @@
             AIにプランを提案してもらう！
         </button>
         </div>
+</section>
+<section id="home-page" class="page">
+    <div style="text-align: center; padding: 30px;">
+        <h2 style="color: #db2777;">SmartDate AI</h2>
+        <p>現在の恋愛レベル：Lv.5</p>
+        <button onclick="showPage('plan')" style="background: #db2777; color: white; padding: 15px; width: 100%; border-radius: 15px; border: none; font-weight: bold;">
+            デート計画を立てる 📅
+        </button>
+    </div>
+</section>
 
-        <div id="resultArea" style="margin-top: 20px; padding: 20px; border-radius: 15px; background: #fff; display: none; width: 100%; max-width: 350px;">
+<section id="stats-page" class="page" style="display: none;">
+    <h2 style="text-align: center;">成功率分析</h2>
+    <div style="background: white; padding: 30px; border-radius: 20px; margin: 10px; min-height: 20px;">
+        <p>（ここに将来グラフが表示されます）</p>
+    </div>
+</section>
+
+
+    <div id="resultArea" style="margin-top: 20px; padding: 20px; border-radius: 15px; background: #fff; display: none; width: 100%; max-width: 350px;">
     <h3 style="color: #db2777;">💖 AIからの提案プラン</h3>
     <p id="resultText"></p>
 </div>
+
 <script>
 function showResult() {
     const gender = document.getElementById('gender').value;
@@ -114,6 +142,7 @@ function showResult() {
     resultArea.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
+
 
 
 
