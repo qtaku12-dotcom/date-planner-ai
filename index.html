@@ -6,50 +6,30 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body style="padding: 20px; font-family: sans-serif;
-             background-color: #fdf2f8; display: flex;
-              flex-direction: column; align-items: center;">
+<body class="body">
 
-    <h1 style="color: #db2777;">デートプランナー</h1>
-    <p style="color: #666;">AIがあなたに最高のデートを提案します。</p>
+    <h1>デートプランナー</h1>
+    <p>AIがあなたに最高のデートを提案します。</p>
 
     <div id="app-content">
-<section id="plan-page" class="page" style="display: none;
- width: 100%; display: flex; flex-direction: column; align-items: center;">
+<section id="plan-page" class="page">
 </div>
- <div style="background: white; padding: 30px; border-radius: 50px;
-     box-shadow: 0 10px 25px rgba(255,0,0,0.5);
-      width: 100%; max-width: 350px; border: 1px solid #fbcfe8;">
+ <div class="app-background">
 
-   <label style="font-weight: bold; color: #db2777;"> 👭 あなたの性別は？</label><br>
-        <select id="gender"  
-               style="padding: 12px;
-               width: 100%; margin: 10px 0;
-               border: 2px solid #fce7f3;
-               border-radius: 10px; font-size: 16px;
-                 background: white;">
+   <label class="genderlabel"> 👭 あなたの性別は？</label><br>
+        <select id="gender">
                  <option value="男性">男性</option>
                  <option value="女性">女性</option>
                  <option value="その他">その他/回答したくない</option>
         </select>       
         <br><br>
 
-        <label style="font-weight: bold; color: #db2777;">  👦 年齢は？</label><br>
-        <input type="number" id="age" placeholder="30" 
-               style="padding: 12px;
-               width: 90%; margin: 10px 0;
-               border: 2px solid #fce7f3;
-                     border-radius: 10px; font-size: 16px;
-                                   background: white;">
+        <label class="agelabel">  👦 年齢は？</label><br>
+        <input type="number" id="age" placeholder="30">
         <br><br>
 
-        <label style="font-weight: bold; color: #db2777;"> 🚗 デートの移動手段は？</label><br>
-        <select id="transport"  
-               style="padding: 12px;
-               width: 100%; margin: 10px 0;
-               border: 2px solid #fce7f3;
-               border-radius: 10px; font-size: 16px;
-                 background: white;">
+        <label class="transportlabel"> 🚗 デートの移動手段は？</label><br>
+        <select id="transport">
                  <option value="徒歩・自転車">徒歩・自転車</option>
                  <option value="車">車</option>
                  <option value="電車">電車</option>
@@ -57,18 +37,13 @@
         <br><br>
         
 
-        <label style="font-weight: bold; color: #db2777;">💰 デートの予算は？</label>
+        <label class="budgetlabel">💰 デートの予算は？</label>
         <br>
-        <input type="number" id="budget" placeholder="10000" 
-               style="padding: 12px; 
-                    width: 90%; margin: 10px 0;
-                     border: 2px solid #fce7f3;
-                     border-radius: 10px; font-size: 16px;
-                     background: white;">
+        <input type="number" id="budget" placeholder="10000">
         
         <br><br>
         
-        <label style="font-weight: bold; color: #db2777;">🍽 食べたいものは？</label>
+        <label class="foodlabel">🍽 食べたいものは？</label>
         <br>
         <select id="food"
              style="padding: 12px; 
