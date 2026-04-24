@@ -1,16 +1,13 @@
 function showResult(): void {
-    // 「as HTMLSelectElement」などを付けて、TypeScriptに正体を教えてあげます
     const genderElement = document.getElementById('gender') as HTMLSelectElement;
     const ageElement = document.getElementById('age') as HTMLInputElement;
     const budgetElement = document.getElementById('budget') as HTMLInputElement;
     const foodElement = document.getElementById('food') as HTMLSelectElement;
     const transportElement = document.getElementById('transport') as HTMLSelectElement;
 
-    // 結果表示エリア
     const resultArea = document.getElementById('resultArea') as HTMLDivElement;
     const resultText = document.getElementById('resultText') as HTMLParagraphElement;
 
-    // 値を取得します
     const gender: string = genderElement.value;
     const age: string = ageElement.value;
     const budget: string = budgetElement.value;

@@ -1,73 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>SmartDate Planner</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
-</head>
-<body class="body">
-
-    <h1>デートプランナー</h1>
-    <p>AIがあなたに最高のデートを提案します。</p>
-
-    <div id="app-content">
-<section id="plan-page" class="page">
-</div>
- <div class="app-background">
-
-   <label class="genderlabel"> 👭 あなたの性別は？</label><br>
-        <select id="gender">
-                 <option value="男性">男性</option>
-                 <option value="女性">女性</option>
-                 <option value="その他">その他/回答したくない</option>
-        </select>       
-        <br><br>
-
-        <label class="agelabel">  👦 年齢は？</label><br>
-        <input type="number" id="age" placeholder="30">
-        <br><br>
-
-        <label class="transportlabel"> 🚗 デートの移動手段は？</label><br>
-        <select id="transport">
-                 <option value="徒歩・自転車">徒歩・自転車</option>
-                 <option value="車">車</option>
-                 <option value="電車">電車</option>
-        </select>       
-        <br><br>
-        
-
-        <label class="budgetlabel">💰 デートの予算は？</label>
-        <br>
-        <input type="number" id="budget" placeholder="10000">
-        
-        <br><br>
-        
-        <label class="foodlabel">🍽 食べたいものは？</label>
-        <br>
-        <select id="food">
-            <option>イタリアン</option>
-            <option>和食（お寿司など）</option>
-            <option>フレンチ</option>
-            <option>カジュアルな居酒屋</option>
-        </select>
-        
-        <br><br>    
-        
-    
-        <button type="button" onclick="showResult()" class="button">
-            AIにプランを提案してもらう!
-        </button>
-        </div>
-</section>
-
-
-    <div id="resultArea">
-    <h3>💖 AIからの提案プラン</h3>
-    <p id="resultText"></p>
-</div>
-
-
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
