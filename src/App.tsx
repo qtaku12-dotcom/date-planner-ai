@@ -48,7 +48,7 @@ function App() {
         
         <br /><br />
 
-        <label className="agelabel"> 👦 年齢は？</label><br />
+        <label className="agelabel"> 👨 年齢は？</label><br />
         <input type="number" id="age" value={formData.age} onChange={handleChange} />
         
         <br /><br />
