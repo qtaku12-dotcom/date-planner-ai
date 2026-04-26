@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// 入力データの型を定義（TypeScriptの強み！）
 interface PlanData {
   gender: string;
   age: string;
