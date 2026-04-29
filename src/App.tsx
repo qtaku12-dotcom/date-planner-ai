@@ -10,7 +10,7 @@ interface PlanData {
 }
 
 function App() {
-  
+
   const [formData, setFormData] = useState<PlanData>({
     gender: '男性',
     age: '30',
@@ -36,10 +36,10 @@ function App() {
 
   return (
     <div className="body">
-      <h1>デートプランナー</h1>
+      <h1>AINOTE</h1>
 
   {!isSubmitted ? (/* --- 入力画面 --- */<div className="input-screen">
-      <p>AIがあなたに最高のデートを提案します。</p>
+      <p>AIの手（アイノテ）であなたの恋愛をサポートします。</p>
 
       <div className="app-background">
         <label className="genderlabel"> 👭 あなたの性別は？</label><br />
@@ -106,5 +106,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
