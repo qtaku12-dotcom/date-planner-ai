@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+ import React, { useState } from 'react';
+ import './App.css';
 
 interface PlanData {
   gender: string;
@@ -85,7 +85,7 @@ function App() {
       </div>
 </div>
   ) : (
-    /* --- 結果画面 --- */
+  
     <div className="result-screen">
       <div id="resultArea" style={{ display: 'block', textAlign:'center' }}>
           <h3>💖 AIからの提案プラン</h3>
