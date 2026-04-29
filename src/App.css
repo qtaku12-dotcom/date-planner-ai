@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    min-height: 100vh;
+    box-sizing: border-box;
 }
   
 h1,h3,p,label,.genderlabel,.agelabel,.transportlabel,.budgetlabel,.foodlabel{
@@ -48,7 +49,12 @@ p {
 }
 
 #resultArea {
-    margin-top: 20px; padding: 20px;
-    border-radius: 15px; background: #fff; display: none;
-    width: 100%; max-width: 350px;
+    margin: 20px auto;    
+    padding: 30px;        
+    border-radius: 20px;
+    background: #fff;
+    width: 90%;        
+    max-width: 500px;     
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }

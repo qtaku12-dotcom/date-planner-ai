@@ -10,7 +10,7 @@ interface PlanData {
 }
 
 function App() {
-  // 1. フォームの状態をまとめて管理
+  
   const [formData, setFormData] = useState<PlanData>({
     gender: '男性',
     age: '30',
@@ -19,22 +19,26 @@ function App() {
     food: 'イタリアン'
   });
 
-  const [result, setResult] = useState<string>('');
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
-  // 2. 入力が変わった時にデータを更新する関数
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // 3. ボタンを押した時の処理
-  const showResult = () => {
-    setResult(`【AI提案中】${formData.age}歳の${formData.gender}の方へ。予算${formData.budget}円で${formData.food}を楽しむ、${formData.transport}移動のプランを作成します...`);
-  };
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+  }
+
+  const handleBack = () => {
+    setIsSubmitted(false);
+  }
 
   return (
     <div className="body">
       <h1>デートプランナー</h1>
+
+  {!isSubmitted ? (/* --- 入力画面 --- */<div className="input-screen">
       <p>AIがあなたに最高のデートを提案します。</p>
 
       <div className="app-background">
@@ -75,15 +79,28 @@ function App() {
         </select>
 
         <br /><br />
-        <button type="button" onClick={showResult} className="button">
+        <button type="button" onClick={handleSubmit} className="button">
           AIにプランを提案してもらう!
         </button>
       </div>
-
-      {result && (
-        <div id="resultArea" style={{display: 'block'}}>
+</div>
+  ) : (
+    /* --- 結果画面 --- */
+    <div className="result-screen">
+      <div id="resultArea" style={{ display: 'block', textAlign:'center' }}>
           <h3>💖 AIからの提案プラン</h3>
-          <p id="resultText">{result}</p>
+          <div className="result-card">
+            <p>
+            <strong>{formData.age}歳</strong>の
+            <strong>{formData.gender}</strong>の
+            方へ。<br />
+            予算<strong>{formData.budget}円</strong>を楽しむ、<br />
+            <strong>{formData.transport}</strong>移動プランをこちらに作成しました！
+            </p>
+          </div>
+          <br />
+          <button type="button" onClick={handleBack} className="button secondary">条件を変えてやり直す</button>
+      </div>
         </div>
       )}
     </div>
