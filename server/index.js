@@ -35,3 +35,7 @@ app.post('/api/plan', async (req, res) => {
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Backend server running on port ${PORT}`));
+// index.js の一番最後に追加
+process.on('uncaughtException', (err) => {
+  console.error('予期せぬエラーが発生しました:', err);
+});

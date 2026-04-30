@@ -25,8 +25,6 @@ function App() {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
-
-  // App.tsx の修正（抜粋）
 const [aiResponse, setAiResponse] = useState<string>('');
 const [isLoading, setIsLoading] = useState<boolean>(false);
 
