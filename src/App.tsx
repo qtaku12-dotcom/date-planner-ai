@@ -26,9 +26,31 @@ function App() {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = () => {
-    setIsSubmitted(true);
+  // App.tsx の修正（抜粋）
+const [aiResponse, setAiResponse] = useState<string>('');
+const [isLoading, setIsLoading] = useState<boolean>(false);
+
+const handleSubmit = async () => {
+  setIsSubmitted(true);
+  setIsLoading(true); // ローディング開始
+  setAiResponse("AIが心理学的なプランを考えています...");
+
+  try {
+    // 自分で作ったサーバー（ポート5000）にデータを送る
+    const response = await fetch('https://curly-fiesta-g4gvj56wgrvv297p4-5000.app.github.dev/api/plan',{
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    setAiResponse(data.plan);
+  } catch (error) {
+    setAiResponse("サーバーとの通信に失敗しました。");
+  } finally {
+    setIsLoading(false); // ローディング終了
   }
+};
 
   const handleBack = () => {
     setIsSubmitted(false);
@@ -97,11 +119,32 @@ function App() {
             予算<strong>{formData.budget}円</strong>を楽しむ、<br />
             <strong>{formData.transport}</strong>移動プランをこちらに作成しました！
             </p>
-          </div>
-          <br />
+    
+    <hr /> 
+
+    {/* 2. ここが重要！AIの回答を表示する部分 */}
+    {isLoading ? (
+      <div className="loading">⏳ AIが心理学的なプランを練っています...</div>
+    ) : (
+      <div style={{ 
+        whiteSpace: 'pre-wrap', 
+        textAlign: 'left', 
+        backgroundColor: '#fff', 
+        padding: '15px', 
+        borderRadius: '10px',
+        color: '#333' 
+      }}>
+        {aiResponse || "プランを取得できませんでした。"}
+      </div>
+    )}
+  </div>
+
+  <br />
+  
           <button type="button" onClick={handleBack} className="button secondary">条件を変えてやり直す</button>
       </div>
         </div>
+      
       )}
     </div>
   );
